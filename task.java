@@ -26,21 +26,9 @@ public class task {
             set2.add(new Random().nextInt(10));
         }
         
-        Iterator<Integer> iterator1 = set1.iterator();
-        Iterator<Integer> iterator2 = set2.iterator();
-
-        System.out.print(iterator1.next());
-        while (iterator1.hasNext()) {
-            System.out.printf(", %d", iterator1.next());
-        }
-
-        System.out.println();
-        System.out.print(iterator2.next());
-        while (iterator2.hasNext()) {
-            System.out.printf(", %d", iterator2.next());
-        }
-        System.out.println();
-
+        System.out.println(set1.toString());
+        System.out.println(set2.toString());
+       
     }
 }
 
@@ -72,6 +60,16 @@ class MySet {
 
     public Integer getItem(int index) {
         return (Integer) toArray()[index];
+    }
+
+    public String toString() {
+        Iterator<Integer> iterator = iterator();
+        String res = "";
+        res += iterator.next();
+        while (iterator.hasNext()) {
+            res += ", " + iterator.next();
+        }
+        return res;
     }
 }
 
@@ -105,5 +103,15 @@ class MyTreeSet {
 
     public Integer getItem(int index) {
         return (Integer) toArray()[index];
+    }
+
+    public String toString() {
+        Iterator<Integer> iterator = iterator();
+        String res = "";
+        res += iterator.next();
+        while (iterator.hasNext()) {
+            res += ", " + iterator.next();
+        }
+        return res;
     }
 }
